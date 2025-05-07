@@ -1,0 +1,94 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contenedor principal que divide en 2 columnas */
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Columna izquierda (sidebar con botones y descripciones) */
+.sidebar {
+    flex: 0 0 30%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #3e3e3e;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.section p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Columna derecha (Resultados de las gráficas) */
+.results {
+    flex: 0 0 65%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.results h2 {
+    color: #333;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Contenedor de las imágenes generadas */
+.imagenes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.imagenes-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 300px;
+}

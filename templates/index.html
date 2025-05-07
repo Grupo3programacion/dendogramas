@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generación de Estadísticos y Gráficas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
+        <!-- Título Principal -->
+        <h2 class="text-2xl font-bold text-center mb-6">Desarrollo propuesto</h2>
+
+        <!-- Sección de Selección -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold">Requerimiento 2: Estadísticos Descriptivos</h3>
+                <p class="text-sm text-gray-600">Genera estadísticos descriptivos de las variables solicitadas.</p>
+
+                <label for="variable1" class="block font-medium">Selecciona la primera variable:</label>
+                <select id="variable1" class="w-full p-2 border rounded">
+                    <option value="year">Año de Publicación</option>
+                    <option value="author">Autor</option>
+                    <option value="number">Número</option>
+                    <option value="pages">Páginas</option>
+                    <option value="type">Tipo</option>
+                    <option value="journal">Journal</option>
+                    <option value="volume">Volumen</option>
+                </select>
+
+                <label for="variable2" class="block font-medium">Selecciona la segunda variable:</label>
+                <select id="variable2" class="w-full p-2 border rounded">
+                    <option value="year">Año de Publicación</option>
+                    <option value="author">Autor</option>
+                    <option value="number">Número</option>
+                    <option value="pages">Páginas</option>
+                    <option value="type">Tipo</option>
+                    <option value="journal">Journal</option>
+                    <option value="volume">Volumen</option>
+                </select>
+
+                <button id="generar-estadisticos" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Generar Gráfico
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold">Requerimiento 3: Frecuencia de Aparición</h3>
+                <p class="text-sm text-gray-600">Genera la frecuencia de aparición de las variables en los abstracts.</p>
+                <button id="generar-frecuencia" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                    Generar Frecuencia
+                </button>
+
+                <h3 class="text-lg font-semibold">Requerimiento 4: Nube de Palabras</h3>
+                <p class="text-sm text-gray-600">Genera una nube de palabras a partir de los abstracts de los artículos.</p>
+                <button id="generar-nube-palabras" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                    Generar Nube de Palabras
+                </button>
+
+                <h3 class="text-lg font-semibold">Requerimiento 5: Grafo de Journals y Artículos</h3>
+                <p class="text-sm text-gray-600">Genera un grafo mostrando la relación entre los journals y artículos más citados.</p>
+                <button id="generar-grafo" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                    Generar Grafo
+                </button>
+
+                <h3 class="text-lg font-semibold">Requerimiento 6: Dendogramas</h3>
+                <p class="text-sm text-gray-600 mb-2">Genera dendogramas y muestra el análisis de similitud entre abstracts.</p>
+                <button id="generar-dendograma" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition mb-4">
+                    Generar Dendogramas
+                </button>
+
+        
+                <h3 class="text-lg font-semibold">Archivos No Utilizados</h3>
+                <p class="text-sm text-gray-600">Analiza los archivos que no han sido utilizados en los análisis previos.</p>
+                <label for="tipoEntrada">Selecciona el tipo de entrada:</label>
+                <select id="tipoEntrada">
+                    <option value="JOUR">JOUR (Artículos de Revista)</option>
+                    <option value="BOOK">BOOK (Libros)</option>
+                    <option value="CONF">CONF (Conferencias)</option>
+                    <option value="THESIS">THESIS (Tesis)</option>
+                </select>
+                <button id="analizar-no-utilizados" class="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition">
+                    Analizar Archivos No Utilizados
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Sección de Resultados -->
+        <h2 class="text-2xl font-bold text-center mt-10">Resultados Generados</h2>
+        <div id="imagenes-generadas" class="mt-6 p-4 bg-gray-50 border rounded-lg min-h-[200px]">
+            <!-- Aquí se mostrarán los resultados dinámicamente -->
+
+         <!-- endogramas: -->
+        <div id="dendogramas-container" class="space-y-4 hidden mt-6">
+            <div>
+                <h4 class="font-medium">Método Ward (Silhouette Score: <span id="ward-score">...</span>)</h4>
+                <img id="ward-img" src="" alt="Dendograma Ward" class="w-full border rounded shadow">
+            </div>
+            <div>
+                <h4 class="font-medium">Método Average (Silhouette Score: <span id="avg-score">...</span>)</h4>
+                <img id="avg-img" src="" alt="Dendograma Average" class="w-full border rounded shadow">
+            </div>
+        </div>    
+        </div>
+    </div>
+
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>
